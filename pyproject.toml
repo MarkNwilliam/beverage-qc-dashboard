@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beverage-qc"
+version = "0.1.0"
+description = "Quality-control toolkit for a carbonated soft-drink bottling line"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Mark William Nkugwa"}]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=1.5",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.12"]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["beverage_qc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
